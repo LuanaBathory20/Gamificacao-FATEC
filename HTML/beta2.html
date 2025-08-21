@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Visual Novel - Fase 2</title>
-  <link rel="stylesheet" href="beta.css">
+  <link rel="stylesheet" href="/css/beta.css">
 </head>
 <body>
   <div class="game-container">
-    <img src="LU2.png" alt="Luana" class="character-image" id="characterImage">
+    <img src="/imagens/LU2.png" alt="Luana" class="character-image" id="characterImage">
 
     <div class="dialogue-box" id="dialogueBox" onclick="nextDialogue()">
       <div class="character-name" id="characterName">Luana</div>
@@ -25,9 +25,9 @@
 
   <script>
     const dialogues = [
-      { name: "Luana", text: "", img: "LU2.png" },
-      { name: "Novato", text: "Ah, obrigado… é tudo tão novo. Eu tô meio perdido.", img: "LU1.png" },
-      { name: "Luana", text: "Relaxa! A gente também ficou assim no começo. Vem comigo, vou te explicar como funcionam as salas, os laboratórios e o Wi-Fi — sim, a gente sempre se atrapalha com a senha.", img: "LU2.png" },
+      { name: "Luana", text: "", img: "/Imagens/LU2.png" },
+      { name: "Novato", text: "Ah, obrigado… é tudo tão novo. Eu tô meio perdido.", img: "/Imagens/LU1.png" },
+      { name: "Luana", text: "Relaxa! A gente também ficou assim no começo. Vem comigo, vou te explicar como funcionam as salas, os laboratórios e o Wi-Fi — sim, a gente sempre se atrapalha com a senha.", img: "/Imagens/LU2.png" },
     ];
 
     let dialogueIndex = 0;

@@ -30,3 +30,4 @@ function escolherFinal(tipo) {
 
   mostrarProximaFalaFinal();
 }
+ 
