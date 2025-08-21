@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Novel - Fase 2</title>
+  <link rel="stylesheet" href="beta.css">
+</head>
+<body>
+  <div class="game-container">
+    <img src="LU2.png" alt="Luana" class="character-image" id="characterImage">
+
+    <div class="dialogue-box" id="dialogueBox" onclick="nextDialogue()">
+      <div class="character-name" id="characterName">Luana</div>
+      <div class="dialogue-text" id="dialogueText">
+       Oi! Você deve ser calouro por aqui, né? Bem-vindo à FATEC Matão! Eu sou a Luana, do terceiro semestre. Posso te mostrar tudo o que precisa saber
+      </div>
+    </div>
+
+    <div class="end-buttons" id="endButtons">
+      <button onclick="window.location.href='beta3.html'">Acessando o e-mail institucional</button>
+      <button onclick="window.location.href='beta4.html'">Conhecendo o Laboratório de Informática</button>
+      <button onclick="window.location.href='beta5.html'">Descobrindo o que é um Projeto Interdisciplinar</button>
+    </div>
+  </div>
+
+  <script>
+    const dialogues = [
+      { name: "Luana", text: "", img: "LU2.png" },
+      { name: "Novato", text: "Ah, obrigado… é tudo tão novo. Eu tô meio perdido.", img: "LU1.png" },
+      { name: "Luana", text: "Relaxa! A gente também ficou assim no começo. Vem comigo, vou te explicar como funcionam as salas, os laboratórios e o Wi-Fi — sim, a gente sempre se atrapalha com a senha.", img: "LU2.png" },
+    ];
+
+    let dialogueIndex = 0;
+
+    function nextDialogue() {
+      dialogueIndex++;
+      if (dialogueIndex < dialogues.length) {
+        const current = dialogues[dialogueIndex];
+        document.getElementById("characterName").innerText = current.name;
+        document.getElementById("dialogueText").innerText = current.text;
+        document.getElementById("characterImage").src = current.img || "";
+        document.getElementById("characterImage").style.display = current.img ? "inline" : "none";
+      } else {
+        document.getElementById("dialogueBox").style.display = "none";
+        document.getElementById("characterImage").style.display = "none";
+        document.getElementById("endButtons").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

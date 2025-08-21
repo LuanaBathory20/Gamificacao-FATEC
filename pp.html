@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Novel - Fase 2</title>
+  <script rel="stylesheet" src="pd.js"></script>
+  <link rel="stylesheet" href="beta2.css">
+</head>
+<body>
+  <div class="game-container">
+    <img src="Pg.png" alt="Paula" class="character-image" id="characterImage">
+
+    <div class="dialogue-box" id="dialogueBox" onclick="nextDialogue()">
+      <div class="end-buttons" id="endButtons">
+        <button onclick="escolherFinal('bom')">Final Bom</button>
+        <button onclick="escolherFinal('neutro')">Final Neutro</button>
+        <button onclick="escolherFinal('ruim')">Final Ruim</button>
+      </div>
+      <div class="character-name" id="characterName">Paula</div>
+      <div class="dialogue-text" id="dialogueText">
+        Estamos chegando perto da floresta onde o cristal foi escondido...
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const dialogues = [
+      { name: "Paula", text: "Estamos chegando perto da floresta onde o cristal foi escondido...", img: "Pg.png" },
+      { name: "Novato", text: "Espero que este lugar seja seguro... parece assustador.", img: "P.png" },
+      { name: "Paula", text: "Fique atento. Não estamos sozinhos aqui.", img: "Pg.png" },
+      { name: "Paula", text: "Você sente que precisa tomar uma decisão importante...", img: "Pg.png" }
+    ];
+
+    let dialogueIndex = 0;
+    let finalEscolhido = false;
+
+    function nextDialogue() {
+      if (finalEscolhido) return; 
+
+      dialogueIndex++;
+      if (dialogueIndex < dialogues.length) {
+        const current = dialogues[dialogueIndex];
+        atualizarCena(current);
+      } else {
+        document.getElementById("endButtons").style.display = "block";
+      }
+    }
+
+    function atualizarCena({ name, text, img }) {
+      document.getElementById("characterName").innerText = name;
+      document.getElementById("dialogueText").innerText = text;
+      document.getElementById("characterImage").src = img || "";
+      document.getElementById("characterImage").style.display = img ? "inline" : "none";
+    }
+  </script>
+</body>
+</html>
