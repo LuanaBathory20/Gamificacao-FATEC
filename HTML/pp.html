@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <title>Visual Novel - Fase 2</title>
-  <script rel="stylesheet" src="pd.js"></script>
-  <link rel="stylesheet" href="beta2.css">
+  <script rel="stylesheet" src="/JavaScript/pd.js"></script>
+  <link rel="stylesheet" href="/css/beta2.css">
 </head>
 <body>
   <div class="game-container">
-    <img src="Pg.png" alt="Paula" class="character-image" id="characterImage">
+    <img src="/imagens/Pg.png" alt="Paula" class="character-image" id="characterImage">
 
     <div class="dialogue-box" id="dialogueBox" onclick="nextDialogue()">
       <div class="end-buttons" id="endButtons">
@@ -25,10 +25,10 @@
 
   <script>
     const dialogues = [
-      { name: "Paula", text: "Estamos chegando perto da floresta onde o cristal foi escondido...", img: "Pg.png" },
-      { name: "Novato", text: "Espero que este lugar seja seguro... parece assustador.", img: "P.png" },
-      { name: "Paula", text: "Fique atento. Não estamos sozinhos aqui.", img: "Pg.png" },
-      { name: "Paula", text: "Você sente que precisa tomar uma decisão importante...", img: "Pg.png" }
+      { name: "Paula", text: "Estamos chegando perto da floresta onde o cristal foi escondido...", img: "/imagens/Pg.png" },
+      { name: "Novato", text: "Espero que este lugar seja seguro... parece assustador.", img: "/imagens/P.png" },
+      { name: "Paula", text: "Fique atento. Não estamos sozinhos aqui.", img: "/imagens/Pg.png" },
+      { name: "Paula", text: "Você sente que precisa tomar uma decisão importante...", img: "/imagens/Pg.png" }
     ];
 
     let dialogueIndex = 0;
